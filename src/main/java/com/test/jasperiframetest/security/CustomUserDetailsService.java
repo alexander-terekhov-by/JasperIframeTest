@@ -1,9 +1,10 @@
-package com.test.jasperiframetest.service;
+package com.test.jasperiframetest.security;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.test.jasperiframetest.entity.User;
+import com.test.jasperiframetest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -25,8 +26,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         System.out.println("User : " + user);
         if (user == null) {
             System.out.println("User not found");
-            throw new UsernameNotFoundException("Username not found");
-        }
+            throw new UsernameNotFoundException("Username not found");        }
         return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPass(),
                 true, true, true, true, getGrantedAuthorities(user));
     }
@@ -35,7 +35,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     private List<GrantedAuthority> getGrantedAuthorities(User user) {
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        System.out.print("authorities :" + authorities);
         return authorities;
     }
 

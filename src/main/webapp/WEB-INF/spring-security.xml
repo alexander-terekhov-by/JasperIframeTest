@@ -7,11 +7,12 @@
     <http auto-config="true">
         <intercept-url pattern="/" access="permitAll"/>
         <intercept-url pattern="/test" access="hasRole('USER')"/>
+        <form-login authentication-success-handler-ref="customSuccessHandler"/>
     </http>
 
     <authentication-manager erase-credentials="false">
         <authentication-provider user-service-ref="customUserDetailsService"/>
     </authentication-manager>
 
-    <beans:bean id="customUserDetailsService" class="com.test.jasperiframetest.service.CustomUserDetailsService"/>
+    <beans:bean id="customUserDetailsService" class="com.test.jasperiframetest.security.CustomUserDetailsService"/>
 </beans:beans>

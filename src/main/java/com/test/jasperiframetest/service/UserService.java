@@ -1,17 +1,19 @@
 package com.test.jasperiframetest.service;
 
 
+import com.test.jasperiframetest.dao.UserDao;
 import com.test.jasperiframetest.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
-    UserService() {
-    }
+    @Autowired
+    UserDao userDao;
 
     public User getByLogin(String login) {
-        return new User("test", "123456");
+        return userDao.getByLogin(login);
     }
 
 }
