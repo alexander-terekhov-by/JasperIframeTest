@@ -1,5 +1,6 @@
 package com.test.jasperiframetest.dao;
 
+import com.test.jasperiframetest.entity.Role;
 import com.test.jasperiframetest.entity.User;
 import org.springframework.stereotype.Repository;
 
@@ -13,9 +14,9 @@ public class UserDao {
     Map<String, User> users;
     {
         users = new HashMap<String, User>();
-        users.put("test", new User("test", "qwerty"));
-        users.put("user", new User("user", "123456"));
-        users.put("teran", new User("teran", "teran"));
+        users.put("test", new User("test", "qwerty", new Role("ROLE_USER")));
+        users.put("user", new User("user", "123456",  new Role("ROLE_ADMIN")));
+        users.put("teran", new User("teran", "teran",  new Role("ROLE_LOL")));
     }
 
     public User getByLogin(String login){
