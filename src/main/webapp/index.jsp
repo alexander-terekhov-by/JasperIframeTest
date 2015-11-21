@@ -1,5 +1,5 @@
 <html>
 <body>
-<button>Log in</button>
+<a href="test">Log in</a>
 </body>
 </html>
