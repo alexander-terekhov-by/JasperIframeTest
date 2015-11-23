@@ -15,5 +15,4 @@ public class UserService {
     public User getByLogin(String login) {
         return userDao.getByLogin(login);
     }
-
 }

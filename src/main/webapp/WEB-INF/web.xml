@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 
-    <display-name>Archetype Created Web Application</display-name>
+    <display-name>JasperTest</display-name>
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -23,7 +23,8 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/spring-security.xml, /WEB-INF/main-servlet.xml </param-value>
+        <param-value>/WEB-INF/spring-security.xml, /WEB-INF/main-servlet.xml,
+            /WEB-INF/hibernate.xml </param-value>
     </context-param>
 
     <servlet>
